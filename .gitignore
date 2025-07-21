@@ -1,0 +1,33 @@
+# Dependencies
+/node_modules/
+/backend/node_modules/
+/frontend/node_modules/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Build & Distribution
+/dist/
+/build/
+/frontend/dist/
+/frontend/build/
+
+# Environment Variables - SANGAT PENTING
+.env
+*.env
+.env.*
+!/.env.example
+
+# ML Models & Data - Jangan push model besar ke Git
+/ml-service/models/
+/ml-service/data/
+
+# IDE & OS specific
+.vscode/
+.idea/
+.DS_Store
+*.swp

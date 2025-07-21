@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:6
+    container_name: nova-mongo
+    restart: unless-stopped
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - app-network
+
+  backend:
+    container_name: nova-backend
+    build:
+      context: ./backend
+    restart: unless-stopped
+    env_file: ./backend/.env
+    ports:
+      - "5100:5000"
+    depends_on:
+      - mongo
+      - ml-service
+    networks:
+      - app-network
+
+  ml-service:
+    container_name: nova-ml-service
+    build:
+      context: ./ml-service
+    restart: unless-stopped
+    env_file: ./ml-service/.env
+    ports:
+      - "8100:8000"
+    networks:
+      - app-network
+
+  frontend:
+    container_name: nova-frontend
+    build:
+      context: ./frontend
+      target: production
+    restart: unless-stopped
+    ports:
+      - "3100:80"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+volumes:
+  mongo-data:
+    name: nova-mongo-data
+
+networks:
+  app-network:
+    driver: bridge
