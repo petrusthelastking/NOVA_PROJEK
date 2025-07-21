@@ -1,78 +1,96 @@
 # 🚀 NOVA: News Impact Analysis Platform
 
-Selamat datang di **NOVA**! Platform ini menganalisis dampak berita dari RSS feed terhadap pergerakan aset finansial menggunakan LLM.
+Welcome to **NOVA**! This platform analyzes the impact of news from RSS feeds on financial asset movements using LLMs.
 
-Kontribusi Anda sangat kami hargai! Panduan ini akan membantu Anda menyiapkan proyek secara lokal, khususnya untuk pengguna **Windows**.
-
----
-## 📋 Prasyarat
-
-Sebelum memulai, pastikan perangkat Anda sudah terinstal:
-* **Git** (versi 2.30+)
-* **Docker Desktop** (untuk menjalankan semua layanan dalam kontainer)
-* **PowerShell 7+** (disarankan untuk kompatibilitas terbaik)
+We truly appreciate your contribution! This guide will help you set up the project locally, specifically tailored for **Windows** users.
 
 ---
-## 🏗️ Menjalankan Proyek Secara Lokal (Windows & PowerShell)
 
-Ikuti langkah-langkah ini di terminal **PowerShell**.
+## 📋 Prerequisites
 
-### 1. Clone Repositori
+Before getting started, make sure your system has the following installed:
+
+* **Git** (version 2.30+)
+* **Docker Desktop** (to run all services in containers)
+* **PowerShell 7+** (recommended for best compatibility)
+
+---
+
+## 🏗️ Running the Project Locally (Windows & PowerShell)
+
+Follow these steps in the **PowerShell** terminal.
+
+### 1. Clone the Repository
+
 ```powershell
-git clone [https://github.com/petrusthelastking/NOVA_PROJEK.git](https://github.com/petrusthelastking/NOVA_PROJEK.git)
+git clone https://github.com/petrusthelastking/NOVA_PROJEK.git
 cd NOVA_PROJEK
 ```
 
-### 2. Konfigurasi Variabel Lingkungan
-File `.env` berisi kunci API dan konfigurasi rahasia lainnya, sehingga tidak disimpan di Git. Salin file contoh yang tersedia untuk membuat file konfigurasi lokal Anda.
+### 2. Configure Environment Variables
+
+The `.env` files contain API keys and other sensitive configuration values and are therefore not committed to Git. Copy the provided example files to create your own local configuration:
+
 ```powershell
-# Salin untuk Backend
+# Copy for Backend
 Copy-Item -Path backend/.env.example -Destination backend/.env
 
-# Salin untuk ML Service
+# Copy for ML Service
 Copy-Item -Path ml-service/.env.example -Destination ml-service/.env
 
-# Salin untuk Frontend
+# Copy for Frontend
 Copy-Item -Path frontend/.env.example -Destination frontend/.env
 ```
-Setelah itu, buka setiap file `.env` yang baru dibuat dan isi nilainya sesuai kebutuhan.
 
-### 3. Bangun & Jalankan Semua Layanan
-Perintah ini akan membangun *image* Docker dan menjalankan semua kontainer dalam mode *development* (dengan *live-reload*).
+After that, open each newly created `.env` file and fill in the required values accordingly.
+
+### 3. Build & Run All Services
+
+This command builds Docker images and starts all containers in *development mode* with *live-reload*:
+
 ```powershell
 docker-compose -f docker-compose.yml -f docker-compose.override.yml up --build
 ```
 
-### 4. Verifikasi Layanan Berjalan
-Setelah semua kontainer berjalan, Anda dapat mengakses layanan melalui URL berikut:
+### 4. Verify Services are Running
+
+Once all containers are running, access the services through the following URLs:
+
 * **Frontend**: `http://localhost:5173`
-* **Backend API**: `http://localhost:5000/api/news` (contoh endpoint)
-* **ML Service Docs**: `http://localhost:8000/docs`
+* **Backend API**: `http://localhost:5100` 
+* **ML Service Docs**: `http://localhost:8100`
 
-Selamat! Lingkungan pengembangan Anda telah siap.
-
----
-## ⚙️ Perintah Berguna (Windows & PowerShell)
-
-* **Menghentikan semua layanan**:
-    ```powershell
-    docker-compose down
-    ```
-* **Melihat log dari layanan tertentu** (ganti `backend` dengan nama layanan lain):
-    ```powershell
-    docker-compose logs -f backend
-    ```
-* **Membersihkan total** (menghapus kontainer & volume data, **termasuk database lokal**):
-    ```powershell
-    docker-compose down -v
-    ```
-> **Untuk Pengguna Linux/macOS/WSL**: Proyek ini juga menyertakan `Makefile`. Anda dapat menggunakan perintah yang lebih singkat seperti `make dev`, `make down`, dll.
+Congratulations! Your development environment is now ready.
 
 ---
-## 🎯 Berkontribusi
-1.  *Fork* repositori ini.
-2.  Buat *branch* baru: `git checkout -b feat/your-feature`
-3.  Implementasikan perubahan Anda.
-4.  Buat *commit* dengan pesan yang jelas: `git commit -m "feat: jelaskan fitur anda"`
-5.  *Push branch* Anda: `git push origin feat/your-feature`
-6.  Buka *Pull Request* dan berikan deskripsi detail tentang perubahan Anda.
+
+## ⚙️ Useful Commands (Windows & PowerShell)
+
+* **Stop all services**:
+
+  ```powershell
+  docker-compose down
+  ```
+* **View logs from a specific service** (replace `backend` with another service name):
+
+  ```powershell
+  docker-compose logs -f backend
+  ```
+* **Clean up everything** (removes containers & volumes, including **local database**):
+
+  ```powershell
+  docker-compose down -v
+  ```
+
+> **For Linux/macOS/WSL users**: This project also includes a `Makefile`. You can use shorter commands like `make dev`, `make down`, etc.
+
+---
+
+## 🌟 Contributing
+
+1. *Fork* this repository.
+2. Create a new *branch*: `git checkout -b feat/your-feature`
+3. Implement your changes.
+4. Make a *commit* with a clear message: `git commit -m "feat: describe your feature"`
+5. *Push* your branch: `git push origin feat/your-feature`
+6. Open a *Pull Request* and provide a detailed description of your changes.
