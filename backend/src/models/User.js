@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const UserSchema = new mongoose.Schema({
     method: {
         type: String,
-        enum: ['local', 'google'], // Hanya ada local dan google
+        enum: ['local', 'google'],
         required: true
     },
     username: {
@@ -24,7 +24,7 @@ const UserSchema = new mongoose.Schema({
         required: [function() { return this.method === 'local'; }, 'Password is required.'],
         select: false // Password tidak akan ikut terambil secara default
     },
-    googleId: { // Hanya ada googleId
+    googleId: {
         type: String
     }
 }, { timestamps: true });
