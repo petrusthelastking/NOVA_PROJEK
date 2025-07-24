@@ -1,0 +1,119 @@
+/* Lapisan luar yang menutupi seluruh layar */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75); /* Latar belakang gelap transparan */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Kartu popup utama */
+.modal-card {
+  background-color: #2d3748; /* Warna gelap untuk kartu */
+  color: #edf2f7;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 800px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Tombol tutup 'x' */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #a0aec0;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Konten di dalam kartu (menggunakan Flexbox untuk layout 2 kolom) */
+.modal-content {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Kolom kiri: Info aplikasi */
+.modal-info {
+  flex-basis: 40%;
+  text-align: center;
+  padding-right: 2rem;
+  border-right: 1px solid #4a5568;
+}
+
+.modal-info .logo {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Kolom kanan: Form */
+.modal-form {
+  flex-basis: 60%;
+}
+
+.modal-form h3 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-form p {
+  color: #a0aec0;
+  margin-bottom: 1.5rem;
+}
+
+.modal-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-form input {
+  background-color: #1a202c;
+  border: 1px solid #4a5568;
+  border-radius: 6px;
+  padding: 0.75rem;
+  color: #edf2f7;
+  font-size: 1rem;
+}
+
+.modal-form button[type="submit"] {
+  background-color: #f6ad55; /* Warna oranye */
+  color: #1a202c;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.modal-form button[type="submit"]:hover {
+  background-color: #ed8936;
+}
+
+.forgot-password {
+  font-size: 0.875rem;
+  color: #a0aec0;
+  text-align: right;
+  text-decoration: none;
+}
+
+.switch-auth {
+  margin-top: 1rem !important;
+  font-size: 0.875rem;
+}
+
+.switch-auth a {
+  color: #f6ad55;
+  font-weight: bold;
+  text-decoration: none;
+}

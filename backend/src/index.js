@@ -29,8 +29,8 @@ mongoose.connect(MONGODB_URI)
   });
 
 // --- API Routes (Akan ditambahkan nanti) ---
-// const newsRoutes = require('./routes/news');
-// app.use('/api/news', newsRoutes);
+const authRoutes = require('./routes/auth');
+app.use('/api/auth', authRoutes);
 
 // Buat "Health Check" route untuk memastikan server berjalan
 app.get('/', (req, res) => {
