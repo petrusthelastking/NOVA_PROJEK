@@ -1,36 +1,15 @@
-import React, { useState } from 'react';
-import AuthModal from './components/AuthModal';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Dashboard from './pages/Dashboard';
 
 function App() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const [modalType, setModalType] = useState('login');
-
-
-  const openModal = (type) => {
-    setModalType(type);
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
   return (
-    <div className="dashboard-container">
-      <header>
-        <h1>Welcome to NOVA</h1>
-        <nav>
-          <button onClick={() => openModal('login')}>Masuk</button>
-          <button onClick={() => openModal('register')}>Daftar</button>
-        </nav>
-      </header>
-      <main>
-        <p>Your dashboard content will be here.</p>
-      </main>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
 
-      {isModalOpen && <AuthModal type={modalType} onClose={closeModal} />}
-    </div>
+      </Routes>
+    </Router>
   );
 }
 

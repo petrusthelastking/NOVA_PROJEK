@@ -5,6 +5,8 @@ services:
     image: mongo:6
     container_name: nova-mongo
     restart: unless-stopped
+    ports:
+      - "27018:27017"
     volumes:
       - mongo-data:/data/db
     networks:

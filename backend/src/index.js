@@ -4,12 +4,23 @@ require('dotenv').config();
 // 2. Impor dependensi inti
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
+const passport = require('passport')
+
+require('./config/passport');
 
 // 3. Buat aplikasi Express
 const app = express();
 
+app.use(cors({
+  // Hanya izinkan permintaan dari URL frontend
+    origin: process.env.FRONTEND_URL
+}));
+
 // 4. Gunakan middleware untuk mem-parsing JSON
 app.use(express.json());
+
+app.use(passport.initialize());
 
 // --- Koneksi ke Database MongoDB ---
 const MONGODB_URI = process.env.MONGODB_URI;

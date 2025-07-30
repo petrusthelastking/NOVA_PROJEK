@@ -1,0 +1,403 @@
+.navbar {
+    background: #0f172a;
+    border-bottom: 1px solid #334155;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 0 1.5rem;
+    height: 60px;
+    border-bottom: 1px solid #334155;
+}
+
+.mobile-menu-btn {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-right: 1rem;
+    border-radius: 6px;
+    display: none;
+    transition: color 0.2s ease;
+}
+
+.mobile-menu-btn:hover {
+    color: #f1f5f9;
+    background: rgba(148, 163, 184, 0.1);
+}
+
+.nav-tabs {
+    display: flex;
+    gap: 0;
+}
+
+.nav-tab {
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: #94a3b8;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.nav-tab:hover {
+    color: #f1f5f9;
+    background: rgba(148, 163, 184, 0.05);
+}
+
+.nav-tab.active {
+    color: #f59e0b;
+    border-bottom-color: #f59e0b;
+    background: rgba(245, 158, 11, 0.05);
+}
+
+.navbar-center {
+    display: flex;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid #334155;
+}
+
+.search-container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.search-bar {
+    position: relative;
+    width: 100%;
+}
+
+.search-bar .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    font-size: 1rem;
+}
+
+.search-bar input {
+    width: 100%;
+    background: #1e293b;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    color: #f1f5f9;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: #f59e0b;
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+.search-bar input::placeholder {
+    color: #64748b;
+}
+
+.search-bar .search-shortcut {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+    font-size: 0.75rem;
+    background: #374151;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 1.5rem;
+    height: 60px;
+    border-bottom: 1px solid #334155;
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.time-display {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: #f1f5f9;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.timezone {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    margin-left: 0.25rem;
+}
+
+.market-status {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.greeting {
+    color: #f1f5f9;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.profile-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+
+.profile-menu:hover {
+    background: rgba(148, 163, 184, 0.1);
+}
+
+.profile-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f59e0b, #f97316);
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.dropdown-icon {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.auth-buttons button {
+    border: none;
+    padding: 0.6rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-signin {
+    background: transparent;
+    border: 1px solid #374151;
+    color: #e2e8f0;
+}
+
+.btn-signin:hover {
+    border-color: #f59e0b;
+    color: #f59e0b;
+}
+
+.btn-signup {
+    background: linear-gradient(135deg, #f59e0b, #f97316);
+    color: #0f172a;
+}
+
+.btn-signup:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+.trending-tags {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: #0f172a;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.trending-tags::-webkit-scrollbar {
+    display: none;
+}
+
+.trending-label {
+    font-size: 0.7rem;
+    color: #94a3b8;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.trending-items {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+}
+
+.trending-tag {
+    background: #f59e0b;
+    color: #0f172a;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.trending-tag:hover {
+    background: #f97316;
+    transform: translateY(-1px);
+}
+
+.trending-tag.reuters {
+    background: #ef4444;
+    color: #fff;
+}
+
+.trending-tag.bitcoin {
+    background: #f97316;
+    color: #fff;
+}
+
+.trending-tag.trump {
+    background: #3b82f6;
+    color: #fff;
+}
+
+.trending-tag.crypto {
+    background: #8b5cf6;
+    color: #fff;
+}
+
+.trending-tag.slides {
+    background: #10b981;
+    color: #fff;
+}
+
+.trending-tag.trade {
+    background: #f59e0b;
+    color: #0f172a;
+}
+
+/* Responsive Design */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-tabs {
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .nav-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .time-display {
+        display: none;
+    }
+
+    .trending-tags {
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .navbar-left {
+        padding: 0 1rem;
+    }
+
+    .navbar-center {
+        display: none;
+    }
+
+    .navbar-right {
+        padding: 0 1rem;
+    }
+
+    .greeting {
+        display: none;
+    }
+
+    .nav-tab {
+        padding: 1rem;
+        font-size: 0.85rem;
+    }
+
+    .trending-tags {
+        padding: 0.5rem 1rem;
+    }
+
+    .trending-items {
+        gap: 0.375rem;
+    }
+
+    .trending-tag {
+        padding: 0.2rem 0.6rem;
+        font-size: 0.65rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .navbar-left, .navbar-right {
+        padding: 0 0.75rem;
+    }
+
+    .nav-tab {
+        padding: 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    .profile-avatar {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+    }
+
+    .auth-buttons button {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+}
